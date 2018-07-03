@@ -1,0 +1,14 @@
+.gradle/
+.env/
+build/
+Launcher/
+out/
+idea/
+node_modules/
+*.iml
+*.ipr
+*.iws
+dest/
+coverage/
+.sass-cache/
+*bundle.js
