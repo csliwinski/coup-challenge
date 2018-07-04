@@ -6,9 +6,10 @@ const defaultState = {
 
 const contentReducer = (state = defaultState, action) => {
     switch (action.type) {
-        case contentActions.FETCH_SCOOTERS:
+        case contentActions.LOAD_SCOOTERS:
             return {
                 ...state,
+                scootersList: action.scootersList,
             };
         default: 
             return state;

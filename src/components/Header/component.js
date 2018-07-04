@@ -26,7 +26,7 @@ const HeaderComponent = styled.div`
 const Header = () => {
     return (
         <HeaderComponent>
-            <Logo />
+            <StyledLogo />
         </HeaderComponent>
     );
 };

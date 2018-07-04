@@ -3,6 +3,9 @@ import Services from '../../services';
 
 import {
     contentActions,
+    loadScooters,
+    fetchScootersFaild,
+    fetchScootersFaildServices,
 } from '../actions/content';
 
 export function *watchFetchScooters() {
@@ -11,10 +14,17 @@ export function *watchFetchScooters() {
 
 export function *fetchScooters() {
     try {
-        const services = new Services();
-        const scootersList = yield call(services.GetItems);
-        console.log(scootersList);
+        const services = new Services(),
+            request = yield call(services.GetItems);
+
+        if (request.status === 200) {
+            let scootersList = request.data.data.scooters;
+            yield put(loadScooters(scootersList))
+        } else {
+            yield put(fetchScootersFaildServices());
+        }
     } catch(error) {
         console.log(error);
+        yield put(fetchScootersFaild());
     }
 }
