@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
+import { connect } from 'react-redux';
+
+import { fetchScooters } from './redux/actions/content';
 
 class App extends Component {
+    componentDidMount() {
+        this.props.fetchScooters();
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -11,4 +18,8 @@ class App extends Component {
     }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+	return {};
+};
+
+export default connect(mapStateToProps, {fetchScooters})(App);
