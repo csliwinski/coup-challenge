@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 
@@ -45,7 +45,7 @@ class Navigation extends Component {
 
     handleChange = (event) => {
         const {name, value} = event.target;
-        this.props.changeFilter(name, value)
+        this.props.changeFilter(name, value);
     }
 
     render() {
@@ -84,6 +84,7 @@ Navigation.propTypes = {
     changeFilter: PropTypes.func,
     changeView: PropTypes.func,
     filters: PropTypes.object,
+    view: PropTypes.string,
 };
 
 export default Navigation;

@@ -1,4 +1,4 @@
-import {call, put, fork, takeEvery} from 'redux-saga/effects';
+import {call, put, takeEvery} from 'redux-saga/effects';
 import Services from '../../services';
 
 import {

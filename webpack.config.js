@@ -22,38 +22,8 @@ module.exports = {
                 use: 'babel-loader',
             },
             {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader'],
-            }, // https://github.com/webpack/webpack/issues/684
-            {
                 test: /\.html$/,
                 use: 'html-loader',
-            },
-            {
-                test: /\.(png|jpg)$/,
-                exclude: /node_modules/,
-                use: [
-                    { loader: 'url-loader?limit=8192' },
-                    { loader: 'img-loader' },
-                ]
-            },
-            {
-                test: /\.scss$/,
-                loaders: [
-                    {
-                        loader: 'style-loader'
-                    },
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            modules: true,
-                            localIdentName: '[local]',
-                        },
-                    },
-                    {
-                        loader: 'sass-loader'
-                    }
-                ]
             },
             {
                 test: /\.svg$/,

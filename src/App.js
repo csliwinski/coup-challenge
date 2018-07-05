@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import Header from './components/Header';
 import Navigation from './components/Content/Navigation';
@@ -14,13 +15,21 @@ const Container = styled.main`
 
 class App extends Component {
     componentDidMount() {
-        this.props.fetchScooters();
+        // this.props.fetchScooters();
+
+        this.timer = setInterval(() => {
+            this.props.fetchScooters();
+        }, 1000);
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timer);
     }
 
     render() {
         return (
             <Container>
-                {/* <Header /> */}
+                <Header />
                 <Navigation />
                 <List />
             </Container>
@@ -30,6 +39,10 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
 	return {};
+};
+
+App.propTypes = {
+    fetchScooters: PropTypes.func,
 };
 
 export default connect(mapStateToProps, {fetchScooters})(App);

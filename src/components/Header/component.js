@@ -1,6 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
-import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 const LogoSvg = styled.svg`
     fill: #1c1c29;
@@ -15,6 +14,7 @@ const Logo = props => (
 const StyledLogo = styled(Logo)`
     width: 120px;
     height: 29.75px;
+    margin: 15px 0;
 `;
 
 const HeaderComponent = styled.div`

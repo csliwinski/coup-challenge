@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { compose, withProps, withHandlers } from 'recompose';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
 import { MarkerClusterer } from 'react-google-maps/lib/components/addons/MarkerClusterer';
@@ -141,5 +141,13 @@ class List extends Component {
         );
     }
 }
+
+List.propTypes = {
+    increasePagination: PropTypes.func,
+    scootersList: PropTypes.array,
+    filters: PropTypes.object,
+    pagination: PropTypes.number,
+    view: PropTypes.string,
+};
 
 export default List;
