@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import Header from './components/Header';
+import Navigation from './components/Content/Navigation';
 import List from './components/Content/List';
 
 import { fetchScooters } from './redux/actions/content';
@@ -14,7 +15,8 @@ class App extends Component {
     render() {
         return (
             <React.Fragment>
-                <Header />
+                {/* <Header /> */}
+                <Navigation />
                 <List />
             </React.Fragment>
         );

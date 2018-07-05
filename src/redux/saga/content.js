@@ -14,12 +14,12 @@ export function *watchFetchScooters() {
 
 export function *fetchScooters() {
     try {
-        const services = new Services(),
-            request = yield call(services.GetItems);
+        const services = new Services();
+        const request = yield call(services.GetItems);
 
         if (request.status === 200) {
-            let scootersList = request.data.data.scooters;
-            yield put(loadScooters(scootersList))
+            const scootersList = request.data.data.scooters;
+            yield put(loadScooters(scootersList));
         } else {
             yield put(fetchScootersFaildServices());
         }
