@@ -9,3 +9,4 @@
 ## How to start
 
     npm start
+    browser: http://localhost:3030/
