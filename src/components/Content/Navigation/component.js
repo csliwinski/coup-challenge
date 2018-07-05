@@ -5,17 +5,37 @@ import PropTypes from 'prop-types';
 
 const NavigationComponent = styled.div`
     display: flex;
-    align-self: center;
+    
     width: 100%;
+    padding: 5px 0;
+    margin: 0 0 10px 0;
 `;
 
 const Tab = styled.div`
-    padding: 0 5px;
+    padding: 5px 10px 6px;
+    margin-right: 5px;
     cursor: pointer;
+    background: #1c2130;
+    color: #24ddaf;
+    &:hover {
+        background: #24ddaf;
+        color: #1c2130;
+    }
 `;
 
 const Column = styled.div`
     display: flex;
+    margin-right: 20px; 
+`;
+
+const Label = styled.label`
+    display: flex;
+    align-self: center;
+    margin-right: 10px;
+`;
+
+const Select = styled.select`
+    margin-left: 10px;
 `;
 
 class Navigation extends Component {
@@ -37,22 +57,22 @@ class Navigation extends Component {
                 </Column>
                 {this.props.view === 'list' ?
                     <Column>
-                        <label>
+                        <Label>
                             Model:
-                            <select name="model" value={this.props.filters.model} onChange={this.handleChange}>
+                            <Select name="model" value={this.props.filters.model} onChange={this.handleChange}>
                                 <option value="">Default</option>
                                 <option value="Gogoro 1st edition">Gogoro 1st edition</option>
                                 <option value="Gogoro 2nd edition">Gogoro 2nd edition</option>
-                            </select>
-                        </label>
-                        <label>
+                            </Select>
+                        </Label>
+                        <Label>
                             Sorting:
-                            <select name="minmax" value={this.props.filters.minmax} onChange={this.handleChange}>
+                            <Select name="minmax" value={this.props.filters.minmax} onChange={this.handleChange}>
                                 <option value="">Default</option>
                                 <option value="min">Min</option>
                                 <option value="max">Max</option>
-                            </select>
-                        </label>
+                            </Select>
+                        </Label>
                     </Column> : null            
                 }                
             </NavigationComponent>

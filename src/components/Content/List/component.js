@@ -13,16 +13,28 @@ const Table = styled.div`
 
 const Row = styled.div`
     display: table-row;
+    background: #fff;
 `;
 
 const Cell = styled.div`
     display: table-cell;
+    padding: 7px 5px;
+    border-bottom: 1px solid #eee;
 `;
 
 const Button = styled.div`
     padding: 10px 20px;
-    color: #fff;
-    background: #000;
+    text-align: center;
+    width: 130px;
+    background: #1c2130;
+    color: #24ddaf;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+    &:hover {
+        background: #24ddaf;
+        color: #1c2130;
+    }
 `;
 
 const MapWithAMarkerClusterer = compose(

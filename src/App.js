@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import styled, { css } from 'styled-components';
 
 import Header from './components/Header';
 import Navigation from './components/Content/Navigation';
 import List from './components/Content/List';
 
 import { fetchScooters } from './redux/actions/content';
+
+const Container = styled.main`
+    padding: 10px 2em;
+`;
 
 class App extends Component {
     componentDidMount() {
@@ -14,11 +19,11 @@ class App extends Component {
 
     render() {
         return (
-            <React.Fragment>
+            <Container>
                 {/* <Header /> */}
                 <Navigation />
                 <List />
-            </React.Fragment>
+            </Container>
         );
     }
 }
